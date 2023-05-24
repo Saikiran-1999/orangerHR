@@ -9,6 +9,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -65,7 +66,8 @@ public class BaseClass {
 				
 			}
 		
-		driver.manage().window().maximize();
+		Dimension d = new Dimension(1382,744); 
+		driver.manage().window().setSize(d);
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
